@@ -11,13 +11,7 @@ transactionRouter.get('/', (request, response) => {
   try {
     const transactions = transactionsRepository.all();
     
-    const { total, income, outcome} = transactionsRepository.getBalance();
-
-    const balance = {
-      total,
-      income,
-      outcome
-    };
+    const balance = transactionsRepository.getBalance();
 
     return response.json({
       transactions,

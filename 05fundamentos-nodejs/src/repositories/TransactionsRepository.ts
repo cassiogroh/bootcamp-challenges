@@ -46,7 +46,13 @@ class TransactionsRepository {
 
     const total = income - outcome;
 
-    return { total, income, outcome };
+    const balance = {
+      total,
+      income,
+      outcome
+    };
+
+    return balance;
   }
 
   public create({ title, value, type }: Omit<Transaction, 'id'> ): Transaction {
@@ -55,6 +61,10 @@ class TransactionsRepository {
     this.transactions.push(transaction);
 
     return transaction;
+  }
+
+  public delete(){
+    this.transactions.pop();
   }
 }
 

@@ -25,6 +25,7 @@ class CreateTransactionService {
     const { total } = this.transactionsRepository.getBalance();
 
     if (total < 0) {
+      this.transactionsRepository.delete();
       throw Error("You don't have enoguh money for this transaction")
     }
 
