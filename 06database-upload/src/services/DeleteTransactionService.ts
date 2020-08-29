@@ -19,7 +19,7 @@ class DeleteTransactionService {
       throw new AppError('Incorret transaction id')
     };
 
-    transactionsRepository.delete(transaction)
+    await transactionsRepository.remove(transaction)
   }
 }
 
