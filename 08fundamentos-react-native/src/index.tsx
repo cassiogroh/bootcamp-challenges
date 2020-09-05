@@ -15,3 +15,5 @@ const App: React.FC = () => (
 );
 
 export default App;
+
+// yarn json-server server.json -p 3333    to init fake API
